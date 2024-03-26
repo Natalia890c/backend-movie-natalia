@@ -24,4 +24,4 @@ const TipoSchema = Schema({
 
 })
 
-module.exports = module('Tipo', TipoSchema)
+module.exports = model('Tipo', TipoSchema)

@@ -1,68 +1,52 @@
-const { Schema, model} = require('mongoose')
+const { Schema, model } = require('mongoose');
 
 const MediaSchema = Schema({
-
     serial: {
         type: String,
-        required: [true, 'serial requerido'],
-        unique: [true, 'media ya existe']
+        required: [true, 'Serial requerido'],
+        unique: [true, 'El serial ya existe']
     },
-
     titulo: {
         type: String,
-        required: [true, 'titulo requerido']
+        required: [true, 'Título requerido']
     },
-
-    sinopsis: {
-        type: String
-    },
-
-    url: {
-        type: String
-    },
-
-    imagen: {
-        type: String,
-    },
-
+    sinopsis: String,
+    url: String,
+    imagen: String,
     fechaCreacion: {
-        type: String,
-        default: new Date(),
+        type: Date,
+        default: Date.now
     },
-
     fechaActualizacion: {
-        type: String,
-        default: new Date(),
+        type: Date,
+        default: Date.now
     },
-
     añoEstreno: {
         type: Date,
-        default: new Date(),
+        default: Date.now
     },
-
     genero: {
         type: Schema.Types.ObjectId,
         ref: 'Genero',
-        required: true 
+        required: true
     },
-
     tipo: {
         type: Schema.Types.ObjectId,
         ref: 'Tipo',
         required: true
     },
-
     director: {
         type: Schema.Types.ObjectId,
         ref: 'Director',
         required: true
     },
-
     productora: {
         type: Schema.Types.ObjectId,
         ref: 'Productora',
-        requiered: true
+        required: true
     }
 });
 
-module.exports = model('Media', MediaSchema)
+const MediaModel = model('Media', MediaSchema);
+
+module.exports = MediaModel;

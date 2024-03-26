@@ -1,29 +1,21 @@
-const express  = require("express")
+const express = require("express")
 const router = express.Router();
+const {getGenero, postGenero, getByIdGenero, putGenero, deleteGenero} = require('../controllers/genero')
+
+
+//Crear Genero
+router.post("/genero", postGenero)
 
 //Obtener Genero
-router.get( "/genero", (req, res) => {
-  res.send("Obtener Genero")
-});
+router.get('/genero', getGenero)
 
-//Crear genero
-router.post("/genero", (req, res) => {
-  res.send("Crear Genero")
-});
+//Obtener Genero por id
+router.get('/genero/:id', getByIdGenero)
 
-//Actualizar genero
-router.put("/genero", (req, res) => {
-  res.send("Actualizar Genero")
-});
+//Actualizar Dato
+router.put('/genero/:id', putGenero)
 
-//Eliminar genero
-router.delete("/genero", (req, res) => {
-  res.send("Eliminar Genero")
-});
-
-
-
-
-
+//Eliminar Genero
+router.delete('/genero/:id', deleteGenero);
 
 module.exports = router

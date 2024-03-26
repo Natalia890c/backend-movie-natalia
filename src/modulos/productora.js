@@ -26,11 +26,12 @@ const ProductoraSchema = Schema({
 
     slogan: {
         type: String,
-        required: true
+        required: [true, 'Dato requerido'],
     },
 
     descripcion: {
-        type: String
+        type: String,
+        required:[true, 'Dato requerido'],
     }
 
 })
