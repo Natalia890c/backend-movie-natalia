@@ -1,25 +1,21 @@
 const express = require("express")
 const router = express.Router();
+const { getTipo, getByIdTipo, postTipo, putTipo, deleteTipo} = require('../controllers/tipo')
 
-
-//Obtener Tipo
-router.get( "/tipo", (req, res) => {
-    res.send("Obtener Tipo")
-});
 
 //Crear Tipo
-router.post("/tipo", (req, res) => {
-    res.send("Crear Tipo")
-});
+router.post("/tipo", postTipo)
 
-//Actualizar Tipo
-router.put("/tipo", (req, res) => {
-    res.send("Actualizar Tipo")
-});
+//Obtener Tipo
+router.get('/tipo', getTipo)
+
+//Obtener Tipo por id
+router.get('/tipo/:id', getByIdTipo)
+
+//Actualizar Dato
+router.put('/tipo/:id', putTipo)
 
 //Eliminar Tipo
-router.delete("/tipo", (req, res) => {
-    res.send("Eliminar Tipo")
-});
+// router.delete('/tipo/:id', deleteTipo)
 
 module.exports = router

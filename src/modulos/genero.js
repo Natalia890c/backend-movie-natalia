@@ -3,7 +3,7 @@ const { Schema, model} = require('mongoose')
 const GeneroSchema = Schema({
     nombre: {
         type: String,
-        required: [true, 'Dato requerido'],
+        required: [true, 'Dato Nombre es requerido'],
         minlength:1
     },
 
@@ -24,7 +24,8 @@ const GeneroSchema = Schema({
     },
 
     descripcion: {
-        type: String
+        type: String,
+        required: [true, 'Dato requerido'],
 
     }
 
