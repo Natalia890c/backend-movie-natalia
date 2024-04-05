@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const MediaSchema = Schema({
+const MediasSchema = Schema({
     serial: {
         type: String,
         required: [true, 'Serial requerido'],
@@ -27,26 +27,26 @@ const MediaSchema = Schema({
     },
     genero: {
         type: Schema.Types.ObjectId,
-        ref: 'Genero',
+        ref: 'Generos',
         required: true
     },
     tipo: {
         type: Schema.Types.ObjectId,
-        ref: 'Tipo',
+        ref: 'Tipos',
         required: true
     },
     director: {
         type: Schema.Types.ObjectId,
-        ref: 'Director',
+        ref: 'Directores',
         required: true
     },
     productora: {
         type: Schema.Types.ObjectId,
-        ref: 'Productora',
+        ref: 'Productoras',
         required: true
     }
 });
 
-const MediaModel = model('Media', MediaSchema);
+const MediasModel = model('Medias', MediasSchema);
 
-module.exports = MediaModel;
+module.exports = MediasModel;

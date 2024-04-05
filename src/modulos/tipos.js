@@ -1,6 +1,6 @@
 const { Schema, model} = require('mongoose')
 
-const TipoSchema = Schema({
+const TiposSchema = Schema({
 
     nombre: {
         type: String,
@@ -24,4 +24,4 @@ const TipoSchema = Schema({
 
 })
 
-module.exports = model('Tipo', TipoSchema)
+module.exports = model('Tipos', TiposSchema)
