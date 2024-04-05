@@ -3,22 +3,22 @@ const { default: mongoose } = require('mongoose');
 require("dotenv").config();
 
 //Exportacion de rutas
-const generoRoutes = require('./routes/genero' );
-const directorRoutes = require('./routes/director');
-const productoraRoutes = require('./routes/productora');
-const tipoRoutes = require('./routes/tipo');
-const mediaRoutes = require('./routes/media');
+const generoRoutes = require('./routes/generos' );
+const directorRoutes = require('./routes/directores');
+const productoraRoutes = require('./routes/productoras');
+const tipoRoutes = require('./routes/tipos');
+const mediaRoutes = require('./routes/medias');
 
 const app = express ();
 const port = process.env.PORT || 9000;
 
 // middleware
 app.use(express.json());
-app.use('/api', generoRoutes)
-app.use('/api', directorRoutes)
-app.use('/api', productoraRoutes)
-app.use('/api', mediaRoutes)
-app.use('/api', tipoRoutes)
+app.use('/api/generos', generoRoutes)
+app.use('/api/directores', directorRoutes)
+app.use('/api/productoras', productoraRoutes)
+app.use('/api/medias', mediaRoutes)
+app.use('/api/tipos', tipoRoutes)
 
 //routes
 app.get('/', (req, res) => {

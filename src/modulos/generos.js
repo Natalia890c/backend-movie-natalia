@@ -1,6 +1,6 @@
 const { Schema, model} = require('mongoose')
 
-const GeneroSchema = Schema({
+const GenerosSchema = Schema({
     nombre: {
         type: String,
         required: [true, 'Dato Nombre es requerido'],
@@ -31,4 +31,4 @@ const GeneroSchema = Schema({
 
 })
 
-module.exports = model('Genero', GeneroSchema)
+module.exports = model('Generos', GenerosSchema)
