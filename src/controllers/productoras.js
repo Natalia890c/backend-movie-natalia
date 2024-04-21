@@ -3,7 +3,7 @@ const { request, response } = require ('express')
 
 const getProductoras = async(req = request, res = response) => {
     try {
-        const productoras = await Productoras.find({estado:true})
+        const productoras = await Productoras.find()
         res.status(200).send( productoras );
     } catch (error) {
         res.status(400).send("Error al obtener el registro")

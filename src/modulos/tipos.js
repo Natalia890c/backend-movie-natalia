@@ -7,6 +7,16 @@ const TiposSchema = Schema({
         required: [true, 'nombre de tipo requerido'],
         minlength: 1
     },
+    estado: {
+        type: Boolean,
+        default: true,
+        required: true
+    },
+
+    imagen: {
+        type: String,
+        default: ''
+    },
 
     fechaCreacion: {
         type: Date,

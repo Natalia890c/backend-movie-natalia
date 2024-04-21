@@ -8,6 +8,10 @@ const ProductorasSchema = Schema({
         minlength: 1
     },
 
+    imagen: {
+        type: String,
+    },
+
     estado: {
         type: Boolean,
         default: true,

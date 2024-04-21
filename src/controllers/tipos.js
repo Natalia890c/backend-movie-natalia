@@ -3,7 +3,7 @@ const { request, response } = require('express')
 
 const getTipos = async (req = request, res = response) => {
     try {
-        const tipos = await Tipos.find({estado:true})
+        const tipos = await Tipos.find()
         res.status(200).send(tipos);
     } catch (error) {
         res.status(400).send("Error al obtener el registro")
