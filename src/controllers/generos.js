@@ -3,7 +3,7 @@ const { request, response } = require('express')
 
 const getGeneros = async (req = request, res = response) => {
     try {
-        const generos = await Generos.find({estado:true})
+        const generos = await Generos.find()
         res.status(200).send(generos);
     } catch (error) {
         res.status(400).send("Error al obtener el registro")
@@ -26,7 +26,8 @@ const postGeneros = async (req = request, res = response) => {
         console.log(generos);
         res.status(200).send({ message: 'El género se ha creado correctamente', generosCreado: generos });
     } catch (error) {
-        res.status(400).send({ message: 'Error al crear el registro', error });
+        const {message} = error
+        res.status(400).send({ message: 'Error al crear el registro', message });
     }
 }
 

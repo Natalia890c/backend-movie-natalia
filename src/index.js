@@ -1,5 +1,6 @@
 const express = require('express');
-const { default: mongoose } = require('mongoose');
+const cors = require('cors');
+const mongoose = require('mongoose');
 require("dotenv").config();
 
 //Exportacion de rutas
@@ -9,10 +10,11 @@ const productorasRoutes = require('./routes/productoras');
 const tiposRoutes = require('./routes/tipos');
 const mediasRoutes = require('./routes/medias');
 
-const app = express ();
-const port = process.env.PORT || 9000;
+const app = express();
+const PORT = process.env.PORT || 9000;
 
 // middleware
+app.use(cors()); // Agregar middleware de CORS
 app.use(express.json());
 app.use('/api/generos', generosRoutes)
 app.use('/api/directores', directoresRoutes)
@@ -30,5 +32,4 @@ mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("connected to MongoDB atlas"))
 .catch((error) => console.error(error));
 
-app.listen(port, () => console.log('server listening on port', port));
-
+app.listen(PORT, () => console.log('server listening on port', PORT));

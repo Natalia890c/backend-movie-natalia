@@ -1,33 +1,37 @@
-const { Schema, model} = require('mongoose')
+const { Schema, model } = require('mongoose')
 
 const GenerosSchema = Schema({
-    nombre: {
-        type: String,
-        required: [true, 'Dato Nombre es requerido'],
-        minlength:1
-    },
+  nombre: {
+    type: String,
+    required: [true, 'Dato Nombre es requerido'],
+    minlength: 1
+  },
 
-    estado: {
-        type: Boolean,
-        default: true,
-        required: true
-    },
+  imagen: {
+    type: String,
+    default: ''
+  },
 
-    fechaCreacion: {
-        type: Date,
-        default: new Date(),
-    },
+  estado: {
+    type: Boolean,
+    default: true,
+    required: true
+  },
 
-    fechaActualizacion: {
-        type: Date,
-        default: new Date(),
-    },
+  fechaCreacion: {
+    type: Date,
+    default: new Date(),
+  },
 
-    descripcion: {
-        type: String,
-        required: [true, 'Dato requerido'],
+  fechaActualizacion: {
+    type: Date,
+    default: new Date(),
+  },
 
-    }
+  descripcion: {
+    type: String,
+    required: [true, 'Dato Description es requerido'],
+  }
 
 })
 
